@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Codedge Infotech – Enterprise AI Infrastructure</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0A0A0A;
+    color: white;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.95);
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #FC6B08;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #FC6B08;
+}
+
+.btn {
+    display: inline-block;
+    background: #FC6B08;
+    color: black;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #3E4095;
+    color: white;
+}
+
+/* Hero */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    background: radial-gradient(circle at 30% 20%, #1A1A3A, #0A0A0A);
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #3E4095;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #FC6B08;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+}
+
+.section-dark {
+    background: #050505;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #FC6B08;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #222;
+}
+
+.card:hover {
+    border-color: #3E4095;
+}
+
+.card i {
+    font-size: 48px;
+    color: #FC6B08;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.card-badge {
+    font-size: 11px;
+    color: #FC6B08;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Metrics */
+.metrics {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.metric {
+    flex: 1;
+    min-width: 120px;
+}
+
+.metric-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FC6B08;
+}
+
+.metric-label {
+    font-size: 13px;
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* Trust Bar */
+.trust-bar {
+    background: #000;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 15px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.trust-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 25s linear infinite;
+}
+
+.trust-track span {
+    margin: 0 30px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* CTA */
+.cta {
+    background: linear-gradient(135deg, #3E4095, #2B2D6B);
+    border-radius: 30px;
+    padding: 60px;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+    background: #050505;
+    padding: 60px 0 30px;
+    border-top: 1px solid #222;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer-col a {
+    display: block;
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.footer-col a:hover {
+    color: #FC6B08;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #222;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.parent-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3E4095;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 40px;
+    font-size: 10px;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+@media (max-width: 900px) {
+    .hero h1 { font-size: 42px; }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 32px; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .metrics { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<a href="#" class="parent-badge">🏢 Part of CodEdge Group</a>
+
+<header>
+<div class="container header-container">
+<a href="#" class="logo">CODEDGE<span>.</span><br><small style="font-size: 10px; color: #aaa;">INFOTECH</small></a>
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Platform</a>
+<a href="#">Solutions</a>
+<a href="#">Contact</a>
+<a href="#" class="btn" style="padding: 8px 20px;">Request Demo</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h1>The AI Backbone for<br><span>the World's Most Demanding</span><br>Enterprises</h1>
+<p>Production-ready ModelOps, Data Fabric, and Intelligent Automation. Deployed globally. Trusted relentlessly.</p>
+<div style="display: flex; gap: 15px; flex-wrap: wrap;">
+<a href="#" class="btn">Explore Platform →</a>
+<a href="#" class="btn btn-outline">Talk to an Engineer</a>
+</div>
+<div class="hero-stats">
+<div><div class="stat-number">1,200+</div><div class="stat-label">Production Models</div></div>
+<div><div class="stat-number">99.999%</div><div class="stat-label">Uptime SLA</div></div>
+<div><div class="stat-number">50+</div><div class="stat-label">Enterprise Clients</div></div>
+<div><div class="stat-number">4</div><div class="stat-label">Global Regions</div></div>
+</div>
+</div>
+</section>
+
+<div class="trust-bar">
+<div class="trust-track">
+<span>TRUSTED BY GLOBAL LEADERS</span><span>✦</span>
+<span>TOP FORTUNE 500 BANK</span><span>✦</span>
+<span>LEADING HEALTHCARE PROVIDER</span><span>✦</span>
+<span>GLOBAL RETAIL CHAIN</span><span>✦</span>
+<span>MAJOR TELECOM OPERATOR</span><span>✦</span>
+<span>INSURANCE GIANT</span><span>✦</span>
+</div>
+</div>
+
+<section class="section">
+<div class="container">
+<div class="metrics">
+<div class="metric"><div class="metric-number">$2.4B+</div><div class="metric-label">Client Value Unlocked</div></div>
+<div class="metric"><div class="metric-number">500+</div><div class="metric-label">AI Models Deployed</div></div>
+<div class="metric"><div class="metric-number">&lt;10ms</div><div class="metric-label">Avg. Inference</div></div>
+<div class="metric"><div class="metric-number">99.999%</div><div class="metric-label">Uptime SLA</div></div>
+<div class="metric"><div class="metric-number">24/7/365</div><div class="metric-label">Global Support</div></div>
+</div>
+</div>
+</section>
+
+<section class="section section-dark">
+<div class="container">
+<h2 class="section-title">One Platform.<br><span>Infinite Scale.</span></h2>
+<div class="grid-3">
+<div class="card"><i class="fas fa-brain"></i><div class="card-badge">Infrastructure</div><h3>AI Sandbox™</h3><p>Enterprise-grade environment for AI experimentation with isolated compute clusters.</p></div>
+<div class="card"><i class="fas fa-cogs"></i><div class="card-badge">Infrastructure</div><h3>ModelOps™</h3><p>Production ML lifecycle management with CI/CD pipelines and automated deployment.</p></div>
+<div class="card"><i class="fas fa-database"></i><div class="card-badge">Infrastructure</div><h3>DataCore™</h3><p>Unified data fabric for enterprise-scale AI workloads with real-time processing.</p></div>
+<div class="card"><i class="fas fa-rocket"></i><div class="card-badge">Applications</div><h3>Career Engine™</h3><p>AI-powered talent matching and career acceleration platform.</p></div>
+<div class="card"><i class="fas fa-chart-bar"></i><div class="card-badge">Applications</div><h3>InsightX™</h3><p>Real-time business intelligence and predictive analytics.</p></div>
+<div class="card"><i class="fas fa-shield-alt"></i><div class="card-badge">Security</div><h3>GuardianAI™</h3><p>AI-native cybersecurity and threat detection with automated response.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Solve Your Most<br><span>Complex Challenges.</span></h2>
+<div class="grid-3">
+<div class="card"><i class="fas fa-microchip"></i><h3>For CTOs</h3><p>Modernize your ML stack with ModelOps. Reduce deployment time from weeks to hours.</p></div>
+<div class="card"><i class="fas fa-flask"></i><h3>For Data Scientists</h3><p>Self-service AI Sandbox with on-demand GPUs. Experiment without infrastructure delays.</p></div>
+<div class="card"><i class="fas fa-lock"></i><h3>For CISOs</h3><p>Governed, secure, auditable AI. Full compliance with GDPR, HIPAA, SOC2.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cta">
+<h2>Ready to Build Your AI Future?</h2>
+<p>Let's discuss your most ambitious infrastructure goals.</p>
+<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+<a href="#" class="btn" style="background: white; color: #3E4095;">Request a Private Demo →</a>
+<a href="#" class="btn btn-outline" style="border-color: white; color: white;">Talk to an Engineer</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col"><h4>CODEDGE INFOTECH</h4><p style="color: #aaa; font-size: 13px;">Building AI systems that scale for enterprises worldwide.</p></div>
+<div class="footer-col"><h4>Products</h4><a href="#">AI Sandbox™</a><a href="#">ModelOps™</a><a href="#">DataCore™</a></div>
+<div class="footer-col"><h4>Solutions</h4><a href="#">For CTOs</a><a href="#">For Data Scientists</a><a href="#">For CISOs</a></div>
+<div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Careers</a><a href="#">CodEdge Academy</a></div>
+</div>
+<div class="copyright">© 2026 Codedge Infotech Pvt Ltd. All rights reserved.</div>
+</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
